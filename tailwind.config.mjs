@@ -56,7 +56,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Roboto Condensed Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["'Roboto Condensed Variable'", ...defaultTheme.fontFamily.sans],
       },
       lineHeight: {
         sm: "16px",

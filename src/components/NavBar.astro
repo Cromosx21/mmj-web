@@ -2,9 +2,19 @@
 import Hamburguer from "@src/Images/icons/Hamburguer.astro";
 import Cart from "../Images/icons/Cart.astro";
 import ArrowUp from "@src/Images/icons/ArrowUp.astro";
+import MenuEspeciality from "./MenuEspeciality.astro";
+
+// Importando iconos de las especialidades
+import Chip2 from "@src/Images/icons/Chip-2.astro";
+import Iot from "@src/Images/icons/Iot.astro";
+import LogicXor from "@src/Images/icons/LogicXor.astro";
+import Robot from "@src/Images/icons/Robot.astro";
+import Software from "@src/Images/icons/Software.astro";
+import Study from "@src/Images/icons/Study.astro";
+import HeadsetHelp from "@src/Images/icons/HeadsetHelp.astro";
 ---
 
-<nav class="bg-white fixed w-full border-b border-black-100 bg-white-100">
+<nav class="bg-white fixed w-full border-b border-black-100 bg-white-100 font-sans">
   <!-- El px es porque el tamaño no es 1440 px sino menos, px-8 menos -->
   <div
     class="content-nav mx-auto flex max-w-7xl items-center justify-between px-7 py-2 lg:px-8"
@@ -15,37 +25,105 @@ import ArrowUp from "@src/Images/icons/ArrowUp.astro";
       class="h-11 md:h-14"
     />
     <ul
-      class="hidden gap-4 font-sans text-base font-normal text-black-600 md:flex"
+      class="hidden gap-4 font-sans text-base font-normal text-black-600 md:flex md:items-center"
     >
-      <a
-        href="#"
-        class="rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
-        >Inicio</a
-      >
-      <a
-        href="#"
-        class="flex items-center gap-1 rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
-      >
-        Cursos
-        <span><ArrowUp /></span>
-      </a>
-      <a
-        href="#"
-        class="flex items-center gap-1 rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
-      >
-        Servicios
-        <span><ArrowUp /></span>
-      </a>
-      <a
-        href="#"
-        class="rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
-        >Proyectos</a
-      >
-      <a
-        href="#"
-        class="rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
-        >Contáctanos</a
-      >
+      <li>
+        <a
+          href="#"
+          class="rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
+          >Inicio</a
+        >
+      </li>
+
+      <li class="relative">
+        <a
+          href="#"
+          id="toggleButton"
+          class="flex transform items-center gap-1 rounded-full px-4 py-1 transition-all duration-300 hover:text-[#155762] hover:bg-[#DDECEE]"
+        >
+          Cursos
+          <span class="transform transition-transform duration-300" id="icon">
+            <ArrowUp />
+          </span>
+        </a>
+        <ul
+          id="dropdownMenu"
+          class="absolute -left-[100%] top-[53px] grid w-[424px] scale-0 grid-cols-2 grid-rows-3 gap-2 overflow-hidden rounded-[16px] bg-white-100 p-4 opacity-20 shadow-[0px_16px_32px_0px_rgba(63,63,70,0.25)] transition-transform duration-300 ease-in-out"
+        >
+          <MenuEspeciality title="Desarrollo de Software Embebido">
+            <Chip2 />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Internet de las cosas IoT">
+            <Iot />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Desarrollo de Software">
+            <Software />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Automatización Industrial">
+            <Robot />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Desarrollo de Hardware">
+            <LogicXor />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Cursos Presenciales">
+            <Study />
+          </MenuEspeciality>
+        </ul>
+      </li>
+
+      <li class="relative">
+        <a
+          href="#"
+          id="toggleButton"
+          class="flex items-center gap-1 rounded-full px-4 py-1 transition-all duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
+        >
+          Servicios
+          <span class="transform transition-transform duration-300" id="icon"><ArrowUp /></span>
+        </a>
+
+        <ul
+          id="dropdownMenu"
+          class="absolute -left-[100%] top-[53px] grid w-[424px] scale-0 grid-cols-2 grid-rows-2 gap-2 overflow-hidden rounded-[16px] bg-white-100 p-4 opacity-20 shadow-[0px_16px_32px_0px_rgba(63,63,70,0.25)] transition-transform duration-300 ease-in-out"
+        >
+
+          <MenuEspeciality title="Soluciones de Hardware a medida">
+            <LogicXor />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Soluciones de IOT a medida">
+            <Iot />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Soluciones de Software a medida">
+            <Software />
+          </MenuEspeciality>
+
+          <MenuEspeciality title="Consultoría">
+            <HeadsetHelp />
+          </MenuEspeciality>
+        </ul>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
+          >Proyectos</a
+        >
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="rounded-full px-4 py-1 transition-colors duration-300 hover:bg-[#DDECEE] hover:text-[#155762]"
+          >Contáctanos</a
+        >
+      </li>
     </ul>
     <a
       class="hidden cursor-pointer px-4 py-2 transition-all duration-500 hover:translate-x-2 md:block"
@@ -108,3 +186,65 @@ import ArrowUp from "@src/Images/icons/ArrowUp.astro";
     animation: slideIn 0.3s forwards; /* Ejecuta la animación */
   }
 </style>
+
+<script is:global>
+  // Seleccionar todos los botones y menús de submenú
+  const toggleButtons = document.querySelectorAll("[id^='toggleButton']");
+  const dropdownMenus = document.querySelectorAll("[id^='dropdownMenu']");
+
+  toggleButtons.forEach((button, index) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Obtener el submenú correspondiente al botón clickeado
+      const menu = dropdownMenus[index];
+      const icon = button.querySelector("span");
+
+      // Cerrar todos los menús excepto el actual
+      dropdownMenus.forEach((otherMenu, otherIndex) => {
+        if (otherMenu !== menu) {
+          otherMenu.classList.add("scale-0", "opacity-20");
+          otherMenu.classList.remove("scale-100", "opacity-100");
+          toggleButtons[otherIndex].classList.remove("bg-[#DDECEE]", "text-[#155762]");
+          toggleButtons[otherIndex].querySelector("span").classList.remove("rotate-180");
+        }
+      });
+
+      // Cambiar las clases del menú actual y el icono
+      menu.classList.toggle("scale-0");
+      menu.classList.toggle("scale-100");
+      menu.classList.toggle("opacity-20");
+      menu.classList.toggle("opacity-100");
+
+      // Cambiar color y rotación de ícono para el botón actual
+      button.classList.toggle("bg-[#DDECEE]");
+      button.classList.toggle("text-[#155762]");
+      icon.classList.toggle("rotate-180");
+    });
+  });
+
+  // Cerrar el menú si se hace clic fuera de él
+  document.addEventListener("click", (e) => {
+    let clickedInside = false;
+
+    // Verificar si el clic fue dentro de alguno de los botones o menús
+    toggleButtons.forEach((button, index) => {
+      const menu = dropdownMenus[index];
+      if (button.contains(e.target) || menu.contains(e.target)) {
+        clickedInside = true;
+      }
+    });
+
+    // Si el clic fue fuera de los menús y botones, cerrarlos todos
+    if (!clickedInside) {
+      dropdownMenus.forEach((menu, index) => {
+        menu.classList.add("scale-0", "opacity-20");
+        menu.classList.remove("scale-100", "opacity-100");
+        toggleButtons[index].classList.remove("bg-[#DDECEE]", "text-[#155762]");
+        toggleButtons[index].querySelector("span").classList.remove("rotate-180");
+      });
+    }
+  });
+</script>
+
+
